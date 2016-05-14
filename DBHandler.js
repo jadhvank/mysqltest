@@ -20,12 +20,12 @@ function handle_database(req, res) {
 
         console.log('connected as id ' + connection.threadId);
 
-        connection.query("select * from potluck", function (err, rows) {
-            connection.release();
-            if (!err) {
-                res.json(rows);
-            }
-        });
+        // connection.query("select * from potluck", function (err, rows) {
+        //     connection.release();
+        //     if (!err) {
+        //         res.json(rows);
+        //     }
+        // });
 
         if (req.url === '/users') {
             var user = {
@@ -33,14 +33,14 @@ function handle_database(req, res) {
                 'name': req.body.name,
                 'address': req.body.address
             };
-
-            connection.query("insert into users set ?", user, function (err, result) {
+            console.log(user);
+            connection.query("INSERT INTO users set ?", user, function (err, result) {
                 if (err) {
                     console.error(err);
                     throw err;
                 }
                 console.log(result);
-                res.send(200, 'success');
+                // res.send(200, 'success');
             });
         }
         connection.on('error', function (err) {
