@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+    <form name="user" method="post" action="/users">
+        <b>Add Users</b><p>
+        id <input type="text" name="userid"/>
+        <br>
+        name <input type="text" name="name"/>
+        <br>
+        address <input type="text" name="address"/>
+        <br>
+        <button type="submit" >Submit</button>
+    </form>
+    <form enctype='application/json' method="POST" action="/users">
+        <input name='sessionId' value="has7ft8f7w56ef78wte"/>
+        <input name='sessionValid' value="true"/>
+        <button type='submit'>Submit</button>
+    </form>
+    <form method="post" action="/users"> <input type="text" name="user[name]"> <input type="text" name="user[email]"> <input type="submit" value="Submit"></form>
+    </body>
+</html>
